@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" x-ng-app>
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script type="text/javascript" src="angular-1.2/angular-animate.js"></script>
+    
+    <title>WDI LA 3/4 2014</title>
+
+  </head>
+
+<body x-ng-controller="StudentCtrl">
+
+  <div id="loadScreen" class="col-md-12 col-xs-12" ng-init="showPage()">
+    <div class="col-md-4 col-xs-4"></div>
+    <div class="col-md-4 col-xs-4">
+      <div class="new-circle"></div>
+      <img class="loadimage col-md-12 col-xs-12" src="images/GA_logo.png">
+      <h1 class="writer text-center">
+        THIS IS...WDI LA 3/4!
+      </h1>
+    </div>
+    <div class="col-md-4 col-xs-4"></div>
+  </div>
+
+    <div class="main row" id="group-header">
+      <div class="col-md-12"> 
+        <div class="giftwrapper col-xs-12"> 
+          <div id="row">
+            <div class="gif-box col-md-2 col-sm-3 col-xs-4" 
+                  ng-repeat="i in images track by $index" 
+                  ng-init="bg='images/image' + ($index+1) + '.png'" 
+                  style="background-image: url({{bg}})" 
+                  ng-mouseenter="makeBright($index+1)" 
+                  >
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="main container-fluid frame">
+      <div class="row" id="wdi-about">
+            <h2 class="underline">ABOUT</h2>
+            <p class="wdiLink weAre">We are</p> 
+            <p class="aboutP">marketers, musicians, designers, entrepreneurs, accountants, producers, and teachers.</p>
+             <p class="weAreDevs">We are developers.</p> 
+             <p class="weAreWDI">We are <a   href="https://generalassemb.ly/education/web-development-immersive">WDI</a>.</p>
+      <div class="ico-container">
+        <div class="three columns">
+          <div id="htmlico" class="icon">&#60;&#47;&#62;</div>
+          <h3 class="aboutTitles">HTML5/CSS3</h3>
+            <p>The latest in markup language and visual presentation.</p>
+        </div>
+        <div class="three columns">
+          <div id="jsjq" class="icon">&#40;&#41;&#59;</div>
+          <h3 class="aboutTitles">JS/jQuery/AngularJS</h3>
+            <p>Front End foundations, animations, and lightweight frameworks.</p>
+        </div>
+        <div class="three columns">
+          <div id="rails" class="icon">&#37;&#61;</div>
+          <h3 class="aboutTitles">Ruby on Rails</h3>
+            <p>Full-stack web applications with streamlined database creation.</p>
+        </div>
+        <div class="three columns">
+          <div id="sql" class="icon">SQL</div>
+          <h3 class="aboutTitles">SQL/MongoDB</h3>
+            <p>Secure data with web apps created using test driven development.</p>
+        </div>
+      </div>
+      <div class="row">
+    </div>
+      
+    <div class="row" id="students" ng-show="loadComplete">
+
+      <h2 class="underline2">STUDENTS</h2>
+      <div class="col-xs-12 col-sm-4 col-md-3 frame" ng-repeat="student in students | filter:q">
+        <div class="panel portraits" style="background-image: url({{student.imgURL}});">
+          <div class="name-overlay" id="ID{{$index}}">{{student.first}} {{student.last}}</div>
+          <a href="#{{student.first}}" class="glyphicon glyphicon-chevron-up"></a>
+
+            <div id="{{student.first}}" class="modalDialog">
+            <div>
+              <a href="#close" title="Close" class="close">X</a>
+              <div class="overlay">
+                <a ng-class="{hidelink: student.linkedin==''}" id="linkedin" href="https://www.linkedin.com/{{student.linkedin}}"  target="{{_blank}}">LINKEDIN<br></a>
+                <a ng-class="{hidelink: student.github==''}" id="git" href="http://www.github.com/{{student.github}}" target="_blank">GITHUB<br></a>
+                <a ng-class="{hidelink: student.twitter==''}" id="twitter" href="http://www.twitter.com/{{student.twitter}}" target="_blank">TWITTER<br></a>
+                <a ng-class="{hidelink: student.portfolio==''}" id="portfolio" href="http://{{student.portfolio}}" target="_blank">PORTFOLIO<br></a>
+                <a ng-class="{hidelink: student.angellist==''}" id="angellist" href="https://angel.co/{{student.angellist}}" target="_blank">ANGEL LIST<br></a>
+                <a href="#{{student.last}}" ng-class="{hidelink: student.bio==''}" id="bio" href="#">BIO<br></a> <!-- do something with bios -->
+              </div>
+            </div>
+          </div>
+        </div>
+          <div id="{{student.last}}" class="modalDialog">
+            <div>
+              <a href="#close" title="Close" class="close">X</a>
+              <p class="modalBios">{{student.bio}}</p>
+            </div>
+          </div>
+
+      </div>
+
+    </div> <!-- close student row -->
+
+
+    <div class="row" id="footer">
+
+    </div>
+  </div>
+</div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
