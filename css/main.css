@@ -126,15 +126,15 @@ a:hover {
   text-decoration: none;
 }
 
-#ID0, #ID9 {
+#ID0, #ID9, #rb {
   color: #e74c3c;
 }
 
-#ID1 {
+#ID1, #jc {
   color: #2ecc71;
 }
 
-#ID3 {
+#ID3, #bd {
   color: #9b59b6;
 }
 
@@ -142,20 +142,20 @@ a:hover {
   color: #16a085;
 }
 
-#ID0, #ID16, #ID21, #ID30, #ID34 {
+#ID0, #ID16, #ID21, #ID30, #ID34, #dj {
   color: #e74c3c;
 }
 
-#ID6, #ID10, #ID19, #ID23 {
+#ID6, #ID10, #ID19, #ID23, #jl {
   color: #9b59b6;
 
 }
 
-#ID4, #ID15, #ID26 {
+#ID4, #ID15, #ID26, #as {
   color: #e67e22;
 }
 
-#ID2, #ID5, #ID12, #ID18, #ID24, #ID31, #ID33, #ID37 {
+#ID2, #ID5, #ID12, #ID18, #ID24, #ID31, #ID33, #ID37, #ji {
   color: #3498db;
 }
 
@@ -504,6 +504,55 @@ p {
 
 .close:hover { 
 	background: rgba(90,199,185,1); 
+}
+
+footer {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.footer-bar { 
+	height: 15px;
+	background: #363636;
+}
+
+.arrowSuperContainer {
+	margin-top: .5rem;
+	margin-bottom: .1rem;
+	text-align: center;
+}
+
+.arrowContainer {
+	margin-top: -.5rem;
+	width: 100%;
+}
+
+.bottomArrowContainer {
+	margin-top: -1.4rem;
+	width: 100%;
+}
+
+.arrow {
+	display: inline-block;
+	position: relative;
+	padding: .25rem;
+	box-shadow: 1px -1px 0 1px #595548 inset;
+	-webkit-box-shadow: 1px -1px #595548 inset;
+	border: solid transparent;
+	transition: 0.2s;
+	margin: 0 auto;
+}
+
+.arrow-down {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+}
+
+p>a {
+	padding: 0 10px;
+	display: inline-block;
 }
 
 
