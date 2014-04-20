@@ -289,10 +289,6 @@ a:hover {
   font-family: "pfdino bold"; 
 }
 
-#wdi-about h2 {
-
-}
-
 p {
 	font-family: "brandon-grotesque";
 }
@@ -448,6 +444,10 @@ p {
   color: white;
 }
 
+#students {
+	font-family: "pfdino bold"; 
+}
+
 
 /*MODAL LINKS*/
 
@@ -515,6 +515,11 @@ footer {
 	background: #363636;
 }
 
+footer p {
+	margin: 0 auto;
+	text-align: center;
+}
+
 .arrowSuperContainer {
 	margin-top: .5rem;
 	margin-bottom: .1rem;
@@ -549,8 +554,12 @@ footer {
 	-o-transform: rotate(-45deg);
 }
 
-#contributors p {
+#contributors {
 	margin-left: 33px;
+}
+
+#beach-measure {
+	color: rgba(51,51,51,.85);
 }
 
 p>a {
@@ -559,7 +568,7 @@ p>a {
 }
 
 @media screen and (max-width: 815px) {
-	#contributors p {
+	#contributors {
 		margin-left: 0px;
 	}
 }
@@ -587,7 +596,7 @@ p>a {
 	text-align: center;
 	}
 
-	#contributors p {
+	#contributors {
 		margin-left: 0px;
 	}
 }
