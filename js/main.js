@@ -46,6 +46,19 @@ function StudentCtrl($scope) {
 
 
     $scope.showPage = function(){
+      var width = 0;
+      var height = 0;
+
+      var imgSize = function(){
+        $(".loadimage").load(function(){
+          width = $(this).width();
+          height = $(this).height();
+          $(this).attr("width",width).attr("height",height);
+          console.log("width: " + width + " / " + "height: " + height);
+        });
+      }
+      imgSize();
+
       setTimeout(function(){
         $(".new-circle").css("transform","translate(45px, 45px)");
       }, 20);
@@ -53,11 +66,11 @@ function StudentCtrl($scope) {
       setTimeout(function(){
         // $(".new-circle").css("transform","translate(45px, 45px)");
         $(".new-circle").css("transform","translate(15px, -45px)");
-        $(".new-circle").animate({'width':365,'height':365,'margin-left':'10','margin-top':'205'}, 200);
+        $(".new-circle").animate({'width':(.948*width),'height':(.948*height),'margin-left':'10','margin-top':'205'}, 200);
 
         // $(".new-circle").css("transform","scale(5.5) translate(-225px, -213px)");
         // $(".loadimage").css("transform","rotate(18000deg)");
-      },1000);
+      },1000, width, height);
      
       setTimeout(function(){
 
