@@ -18,7 +18,7 @@ function StudentCtrl($scope) {
     { "first":'Ryan', "last":'Holstein', "linkedin":'pub/ryan-holstein/41/923/488/', "github":'RyanHolstein', "twitter":'ryanholstein', "portfolio":'ryanholstein.com', "angellist":'', "imgURL":'images/holstein.png', "bio":'Ryan is Junior Web Developer with an interest in front-end JavaScript / Web 2.0 development. Has a background in Avation and has a B.s from Embry Riddle Aeronautical Univeristy. Fun fact Ryan is a pilot!' },
     { "first":'Ellie', "last":'Hoshizaki', "linkedin":'in/elliehoshizaki', "github":'elliehoshi', "twitter":'ehoshizaki', "portfolio":'elliehoshizaki.com/', "angellist":'elena-hoshizaki', "imgURL":'images/hoshizaki.png', "bio":'Ellie is a UX/UI designer and front end web developer with a BA in Architecture from UCLA. She builds clean code to create interactive and intuitive designs with the end user always in mind.' },
     { "first":'Matt', "last":'Hwang', "linkedin":'pub/matt-hwang/45/477/452', "github":'mhwang206', "twitter":'', "portfolio":'lifehack.herokuapp.com/', "angellist":'', "imgURL":'images/hwang.png', "bio":'Matt is a full stack developer who is very obsessed with product and UX. He loves rapid prototyping and getting user feedback for anything he builds.' },
-    { "first":'Jonathan', "last":'Igner', "linkedin":'pub/jonathan-igner/5/77b/50a/', "github":'iggyigner', "twitter":'iggyigner', "portfolio":'grappple.herokuapp.com/', "angellist":'squiiid', "imgURL":'images/igner_2.png', "bio":'Jonathan aka, "Iggy" is a startup founder, designer, web developer and car geek who matches his shoes and sweatpants. Born in LA with NY roots, his creative work includes jobs for rapper Mac Miller, Suspend Magazine, and Bentley Motors. He once chased down his favorite fashion designer in Chinatown just for a high five.' },
+    { "first":'Jonathan', "last":'Igner', "linkedin":'in/iggyigner/', "github":'iggyigner', "twitter":'iggyigner', "portfolio":'grappple.herokuapp.com/', "angellist":'squiiid', "imgURL":'images/igner_2.png', "bio":'Jonathan aka, "Iggy" is a startup founder, designer, web developer and car geek who matches his shoes and sweatpants. Born in LA with NY roots, his creative work includes jobs for rapper Mac Miller, Suspend Magazine, and Bentley Motors. He once chased down his favorite fashion designer in Chinatown just for a high five.' },
     { "first":'Dan', "last":'Iwao', "linkedin":'pub/daniel-iwao/a/650/71a', "github":'diwao11', "twitter":'daniwao', "portfolio":'www.daniwao.com', "angellist":'', "imgURL":'images/iwao.png', "bio":'Dan believes that all programming should be centered around a user\'s experience. His background as a life-coach and teacher give him the experience needed to create thoughtful web apps. ' },
     { "first":'Damon', "last":'Jacoby', "linkedin":'pub/damon-jacoby/22/7b3/486', "github":'DamonJJ', "twitter":'damonjj', "portfolio":'movie-db.herokuapp.com', "angellist":'damon-jacoby', "imgURL":'images/jacoby.png', "bio":'Damon is a Junior Full Stack Developer, with ten years of coordinating experience in TV. Damon is well versed in knowing how to take a project from inception to completion, enjoys people greatly, and has excellent wisdom in situations involving zombies.' },
     { "first":'Charles', "last":'Julius', "linkedin":'pub/charles-julius/56/a7/591', "github":'cjulius', "twitter":'', "portfolio":'purohealth.com/demo', "angellist":'', "imgURL":'images/julius.png', "bio":'Charles is a full Stack developer and health care professional with more than 9 years of experience with health systems and health law. Currently, he hopes to continue to use his previous experience in health care to enhance medical processes and generate measurable outcomes.' },
@@ -40,116 +40,101 @@ function StudentCtrl($scope) {
   ];
 
 
-    $scope.images = new Array(24);
-    $scope.loadComplete = false;
+  $scope.images = new Array(24);
+  $scope.loadComplete = false;
 
 
+  // INTRO SCREEN ANIMATIONS
+  $scope.showPage = function(){
+    var width = 0;
+    var height = 0;
 
-    $scope.showPage = function(){
-      var width = 0;
-      var height = 0;
 
-      var imgSize = function(){
-        $(".loadimage").load(function(){
-          width = $(this).width();
-          height = $(this).height();
-          $(this).attr("width",width).attr("height",height);
-          console.log("width: " + width + " / " + "height: " + height);
-        });
-      }
-      imgSize();
+    // Determine width and height of GA logos at all screensizes
+    var imgSize = function(){
+      $(".loadimage").load(function(){
+        width = $(this).width();
+        height = $(this).height();
+        $(this).attr("width",width).attr("height",height);
+        console.log("width: " + width + " / " + "height: " + height);
+      });
+    }
+    imgSize();
 
-      setTimeout(function(){
-        $(".new-circle").css("transform","translate(45px, 45px)");
-      }, 20);
 
-      setTimeout(function(){
-        // $(".new-circle").css("transform","translate(45px, 45px)");
-        $(".new-circle").css("transform","translate(15px, -45px)");
-        $(".new-circle").animate({'width':(.948*width),'height':(.948*height),'margin-left':'10','margin-top':'205'}, 200);
+    // First animation of small red circle
+    setTimeout(function(){
+      $(".new-circle").css("transform","translate(45px, 45px)");
+    }, 20);
 
-        // $(".new-circle").css("transform","scale(5.5) translate(-225px, -213px)");
-        // $(".loadimage").css("transform","rotate(18000deg)");
-      },1000, width, height);
-     
-      setTimeout(function(){
 
-        $(".loadimage").css("transform","rotate(18000deg)");
-        $(".loadimage").css("opacity","1");
+    // Growth of small red circle into large red circle (with dynamic width and height so red circle grows to the exact diameter of the GA logos)
+    setTimeout(function(){
+      $(".new-circle").css("transform","translate(15px, -45px)");
+      $(".new-circle").animate({'width':(.948*width),'height':(.948*height),'margin-left':'10','margin-top':'205'}, 200);
+    },1000, width, height);
+   
 
-        $(".new-circle").css("opacity","0");
-      },1800);
-      setTimeout(function(){
-        $(".loadimage").attr("src","images/GA_LA_logo.png");
-      },3500);
+    // Rotate circle and fade to site
+    setTimeout(function(){
 
-      setTimeout(function(){
-        $("#loadScreen").css("opacity","1");
-        $("#loadScreen").css("background","none");
-        $(".main").css("opacity","1");
-      },4500);
+      $(".loadimage").css("transform","rotate(18000deg)");
+      $(".loadimage").css("opacity","1");
 
-      setTimeout(function(){
-        $("#loadScreen").css("opacity","0");
-        $scope.$apply(function(){
-          $scope.loadComplete = true;
-        });
-      },5500);
+      $(".new-circle").css("opacity","0");
+    },1800);
+    setTimeout(function(){
+      $(".loadimage").attr("src","images/GA_LA_logo.png");
+    },3500);
 
-      // typewriter effect
+    setTimeout(function(){
+      $("#loadScreen").css("opacity","1");
+      $("#loadScreen").css("background","none");
+      $(".main").css("opacity","1");
+    },4500);
 
-      var txt = $('.writer').text();
-      var timeOut;
-      var txtLen = txt.length;
-      var char = 0;
-      $('.writer').text('|');
-      (function typeIt() {   
-          var humanize = Math.round(Math.random() * (200 - 30)) + 30;
-          timeOut = setTimeout(function() {
-              char++;
-              var type = txt.substring(0, char);
-              $('.writer').text(type + '|');
-              typeIt();
+    setTimeout(function(){
+      $("#loadScreen").css("opacity","0");
+      $scope.$apply(function(){
+        $scope.loadComplete = true;
+      });
+    },5500);
 
-              if (char == txtLen) {
-                  $('.writer').text($('.writer').text().slice(0, -1)); // remove the '|'
-                  clearTimeout(timeOut);
-              }
 
-          }, humanize);
-      }());
+    // Typewriter effect
+    var txt = $('.writer').text();
+    var timeOut;
+    var txtLen = txt.length;
+    var char = 0;
+    $('.writer').text('|');
+    (function typeIt() {   
+        var humanize = Math.round(Math.random() * (200 - 30)) + 30;
+        timeOut = setTimeout(function() {
+            char++;
+            var type = txt.substring(0, char);
+            $('.writer').text(type + '|');
+            typeIt();
 
-    };
+            if (char == txtLen) {
+                $('.writer').text($('.writer').text().slice(0, -1)); // remove the '|'
+                clearTimeout(timeOut);
+            }
 
-    $scope.makeBright = function(id){
-      $(event.target).css("background-image","url(images/"+id+".gif)")
-      var x = event.target
-      setTimeout(function(){
-        $(x).css("background-image","url(images/image"+id+".png)")
-      },3000);
-    };
+        }, humanize);
+    }());
+
+  };
+
+  //GIF ANIMATION - replace PNG with GIF on hover, then replace with PNG after 3 seconds
+  $scope.makeBright = function(id){
+    $(event.target).css("background-image","url(images/"+id+".gif)")
+    var x = event.target
+    setTimeout(function(){
+      $(x).css("background-image","url(images/image"+id+".png)")
+    },3000);
+  };
+
 }; //close StudentCtrl
-// typewriter effect
-
-var txt = $('.writer').text();
-var timeOut;
-var txtLen = txt.length; 
-var char = 0;
-$('.writer').text('|');
-(function typeIt() {   
-    var humanize = Math.round(Math.random() * (200 - 30)) + 30;
-    timeOut = setTimeout(function() {
-        char++;
-        var type = txt.substring(0, char);
-        $('.writer').text(type + '|');
-        typeIt();
-
-        if (char == txtLen) {
-            $('.writer').text($('.writer').text().slice(0, -1)); // remove the '|'
-            clearTimeout(timeOut);
-        }
-    }, humanize);
-}());
 
     
 
