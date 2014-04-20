@@ -475,7 +475,7 @@ p {
 .modalDialog > div {
 	width: 450px;
 	position: relative;
-	margin: 10% auto;
+	margin: 18% auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
 	background: rgba(0,0,0,0);
@@ -571,6 +571,20 @@ p>a {
 	#contributors {
 		margin-left: 0px;
 	}
+
+	.modalDialog > div {
+		margin: 35% auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#contributors {
+		margin-left: 0px;
+	}
+
+	.modalDialog > div {
+		margin: 30% auto;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -598,6 +612,10 @@ p>a {
 
 	#contributors {
 		margin-left: 0px;
+	}
+
+	.modalDialog > div {
+		margin: 45% auto;
 	}
 }
 
