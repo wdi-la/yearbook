@@ -47,8 +47,15 @@ function StudentCtrl($scope) {
 
     $scope.showPage = function(){
       setTimeout(function(){
-        $(".new-circle").animate({'width':500,'height':500,'margin-left':'25','margin-top':'160'}, 400);
-        // $("#circle").css("transform","scale(5.5) translate(-225px, -213px)");
+        $(".new-circle").css("transform","translate(45px, 45px)");
+      }, 20);
+
+      setTimeout(function(){
+        // $(".new-circle").css("transform","translate(45px, 45px)");
+        $(".new-circle").css("transform","translate(15px, -45px)");
+        $(".new-circle").animate({'width':365,'height':365,'margin-left':'10','margin-top':'205'}, 200);
+
+        // $(".new-circle").css("transform","scale(5.5) translate(-225px, -213px)");
         // $(".loadimage").css("transform","rotate(18000deg)");
       },1000);
      
