@@ -62,16 +62,10 @@ function StudentCtrl($scope) {
     imgSize();
 
 
-    // First animation of small red circle
-    setTimeout(function(){
-      $(".new-circle").css("transform","translate(45px, 45px)");
-    }, 20);
-
-
     // Growth of small red circle into large red circle (with dynamic width and height so red circle grows to the exact diameter of the GA logos)
     setTimeout(function(){
-      $(".new-circle").css("transform","translate(15px, -45px)");
-      $(".new-circle").animate({'width':(.948*width),'height':(.948*height),'margin-left':'10','margin-top':'205'}, 200);
+      $(".new-circle").css("transform","translate(0px, -45px)");
+      $(".new-circle").animate({'width':(.948*width),'height':(.948*height),'margin-left':'25','margin-top':'205'}, 200);
     },1000, width, height);
    
 
