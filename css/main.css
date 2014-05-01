@@ -127,27 +127,21 @@ a:hover {
   text-decoration: none;
 }
 
-#ID0, #ID9, #rb {
+/*Chose to use ID's instead of ng-class or a randomized JS function in order to*/
+/*specify custom positions of colored student names*/
+#ID0, #ID9, #ID16, #ID21, #ID27, #ID30, #ID34, #dj, #rb {
   color: #e74c3c;
 }
 
-#ID1, #jc {
-  color: #2ecc71;
+#ID1, #ID11, #ID13, #ID17, #ID25, #ID32, #jc {
+  color: #2ecc71;  
 }
 
-#ID3, #bd {
-  color: #9b59b6;
+#ID2, #ID5, #ID12, #ID18, #ID24, #ID31, #ID33, #ID37, #ji {
+  color: #3498db;
 }
 
-#ID8, #ID20 {
-  color: #16a085;
-}
-
-#ID0, #ID16, #ID21, #ID30, #ID34, #dj {
-  color: #e74c3c;
-}
-
-#ID6, #ID10, #ID19, #ID23, #jl {
+#ID3, #ID6, #ID10, #ID19, #ID23, #jl, #bd {
   color: #9b59b6;
 }
 
@@ -155,36 +149,16 @@ a:hover {
   color: #e67e22;
 }
 
-#ID2, #ID5, #ID12, #ID18, #ID24, #ID31, #ID33, #ID37, #ji {
-  color: #3498db;
-}
-
 #ID7, #ID14  {
   color: #c0392b;
 }
 
-#ID17, #ID25 {
-  color: #2ecc71;
-}
-
-#ID11, #ID32 {
-  color: #2ecc71;  
-}
-
-#ID13 {
-  color: #2ecc71;  
+#ID8, #ID20, #ID28 {
+  color: #16a085;
 }
 
 #ID22 {
   color: #34495e;
-}
-
-#ID27 {
-  color: #e74c3c;
-}
-
-#ID28 {
-  color: #16a085;
 }
 
 #ID29 {
