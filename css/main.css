@@ -28,20 +28,8 @@ src:url(data:font/opentype;base64,d09GRk9UVE8AAF/wAAwAAAAAojQAAAAAAAAAAAAAAAAAAA
 font-style:normal;font-weight:900;
 }
 
-.writer {
-  font-family: "pfdino bold";
-}
-.red-stripe {
-  height: 60px;
-  background-color: #FF003A;
-}
-
-.gif-box {
-  height: 200px;
-  margin-bottom: -5px;
-  background-size: cover;
-  display: inline-block;
-  transition: 0.5s;
+p {
+	font-family: "brandon-grotesque";
 }
 
 .row {
@@ -58,6 +46,23 @@ body {
   width: 100%;
 }
 
+.frame {
+  max-width: 1100px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.main {
+  opacity: 0;
+  transition: 1s;
+}
+
+/****************/
+/* INTRO SCREEN */
+/****************/
+
 #loadScreen {
   position: absolute;
   height: 100%;
@@ -68,28 +73,16 @@ body {
   opacity: 1;
 }
 
-.main {
-  opacity: 0;
-  transition: 1s;
+.writer {
+  font-family: "pfdino bold";
 }
+
 .loadimage{
   position: absolute;
   border: none;
   margin: 150px auto;
   opacity: 0;
   transition: 1s;
-
-}
-
-.svg {
-  position: absolute;
-  border: none;
-  margin: 150px auto;
-} 
-
-#circle {
-  transition: 1s;
-  z-index: -2;
 }
 
 .new-circle {
@@ -104,168 +97,24 @@ body {
   z-index: -2;
 }
 
-.la-text {
-  position: absolute;
-  color: white;
-  background-color: #FF003A;
-  font-size: 325px;
-  width: 60px;
-  margin-top: 150px;
-  margin-left: 90px;
-  font-family: "pfdino bold";
-}
+/*****************/
+/* GIF CONTAINER */
+/*****************/
 
-form {
-  margin: 15px;
-}
-
-.frame {
-  max-width: 1100px;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-/*Chose to use ID's instead of ng-class or a randomized JS function in order to*/
-/*specify custom positions of colored student names*/
-#ID0, #ID9, #ID16, #ID21, #ID27, #ID30, #ID34, #dj, #rb {
-  color: #e74c3c;
-}
-
-#ID1, #ID11, #ID13, #ID17, #ID25, #ID32, #jc {
-  color: #2ecc71;  
-}
-
-#ID2, #ID5, #ID12, #ID18, #ID24, #ID31, #ID33, #ID37, #ji {
-  color: #3498db;
-}
-
-#ID3, #ID6, #ID10, #ID19, #ID23, #jl, #bd {
-  color: #9b59b6;
-}
-
-#ID4, #ID15, #ID26, #as {
-  color: #e67e22;
-}
-
-#ID7, #ID14  {
-  color: #c0392b;
-}
-
-#ID8, #ID20, #ID28 {
-  color: #16a085;
-}
-
-#ID22 {
-  color: #34495e;
-}
-
-#ID29 {
-  color: #8e44ad;
-}
-
-#linkedin {
-	color: rgba(253,222,77,1);
-}
-
-#git {
-	color: rgba(238,57,62,1);
-}
-
-#twitter {
-	color: rgba(247,247,247,1);
-}
-
-#portfolio {
-  color: rgba(90,199,185,1);
-}
-
-#bio {
-  color: rgba(249,144,211,1);
-}
-
-#angellist {
-	color: rgba(196,177,156,1);
-}
-
-.modalBios {
-	color: rgba(247,247,247,1);
-	font-family: "brandon-grotesque";
-	font-size: 1.6em;
-	letter-spacing: 1.25px;
-	line-height: 1.5;
-}
-
-.stulink {
-  display: block;
-}
-
-.hidelink {
-  display: none;
-}
-
-.portraits {
-  height: 380px;
-  border: 15px solid #363636;
-  border-radius: 30px;
-  padding: 10px 15px;
-  font-family: "pfdino bold";
-  font-size: 2em;
-  text-transform:uppercase;
+.gif-box {
+  height: 200px;
+  margin-bottom: -5px;
   background-size: cover;
-
-  /* if you want a nice rounded inside border, take your border thickness and double it for the border radius
-      it will look like an ipad. :)  ;
-  */
+  display: inline-block;
+  transition: 0.5s;
 }
 
-.name-overlay {
-  font-family: "pfdino bold";
-  font-size: 1em;
-  -webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
-
-}
-
-.overlay {
-  font-size: 1.2em;
-  -webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
-  user-select: none;
-  font-family: "brandon-grotesque";
-  font-size: 1em;
-  font-weight: 800;
-}
-
-
-.form-inline{
-  text-align: right;
-}
-
-/* DOWN ARROW */
-#arrow-cont{
-  width: 100%;
-  height: 100px;
-  text-align: center;
-}
-#down-arrow{
-  border: 0;
-  width: 100px;
-  height: 100px;
-  float: center;
-}
-
+/*****************/
 /* ABOUT SECTION */
+/*****************/
+
 #wdi-about {
   font-family: "pfdino bold"; 
-}
-
-p {
-	font-family: "brandon-grotesque";
 }
 
 #wdi-about p {
@@ -273,7 +122,7 @@ p {
   text-align: center;
 }
 
-.underline {
+#underline {
 	color: black;
   text-align: center;
   font-size: 30px;
@@ -281,35 +130,27 @@ p {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-.underline2 {
-	color: black;
-	text-align: center;
-	font-size: 30px;
-	border-bottom: 2px solid red;
-	margin-top: 100px;
-	margin-bottom: 100px;
-}
 
 .aboutTitles {
 	font-family: "pfdino bold"; 
 	font-size: 30px;
 }
 
-.weAre {
+#weAre {
 	font-size: 50px;
 	font-weight: bold;
 }
 
-.aboutP {
+#aboutP {
 	font-size: 35px;
 }
 
-.weAreDevs {
+#weAreDevs {
 	font-size: 50px;
 	font-weight: bold;
 }
 
-.weAreWDI {
+#weAreWDI {
 	font-size: 50px;
 	font-weight: bold;
 	padding-bottom: 60px;
@@ -329,38 +170,28 @@ p {
 	text-align: center;
 }
 
-/*ANCHOR LINKS*/
+/* ANCHOR LINKS */
 
-#wdiLink a {
-	color: red !important;
-	-webkit-transition: all .25s ease;
-	   -moz-transition: all .25s ease;
-	    -ms-transition: all .25s ease;
-	     -o-transition: all .25s ease;
-	        transition: all .25s ease;
+#weAreWDI a {
+	-webkit-transition: all .35s ease;
+	   -moz-transition: all .35s ease;
+	    -ms-transition: all .35s ease;
+	     -o-transition: all .35s ease;
+	        transition: all .35s ease;
 }
 
-#wdiLink a:hover {
+#weAreWDI a:hover {
 	opacity: 0.5;
-	-webkit-transition: all .25s ease;
-	   -moz-transition: all .25s ease;
-	    -ms-transition: all .25s ease;
-	     -o-transition: all .25s ease;
-	        transition: all .25s ease;
+	-webkit-transition: all .35s ease;
+	   -moz-transition: all .35s ease;
+	    -ms-transition: all .35s ease;
+	     -o-transition: all .35s ease;
+	        transition: all .35s ease;
 }
-
-.glyphicon-chevron-up:before {
-	-webkit-transition: all .25s ease;
-	-moz-transition: all .25s ease;
-	-ms-transition: all .25s ease;
-	-o-transition: all .25s ease;
-	transition: all .25s ease;
-}
-
 
 /* LANGUAGE ICONS */
 
-.ico-container {
+#ico-container {
   margin: 0 auto;
   text-align: center;
 }
@@ -417,12 +248,90 @@ p {
   color: white;
 }
 
+/*******************/
+/* STUDENT SECTION */
+/*******************/
+
 #students {
 	font-family: "pfdino bold"; 
 }
 
+#underline2 {
+	color: black;
+	text-align: center;
+	font-size: 30px;
+	border-bottom: 2px solid red;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
 
-/*MODAL LINKS*/
+/*Chose to use ID's instead of ng-class or a randomized JS function in order to*/
+/*specify custom positions of colored student names*/
+#ID0, #ID9, #ID16, #ID21, #ID27, #ID30, #ID34, #dj, #rb {
+  color: #e74c3c;
+}
+
+#ID1, #ID11, #ID13, #ID17, #ID25, #ID32, #jc {
+  color: #2ecc71;  
+}
+
+#ID2, #ID5, #ID12, #ID18, #ID24, #ID31, #ID33, #ID37, #ji {
+  color: #3498db;
+}
+
+#ID3, #ID6, #ID10, #ID19, #ID23, #jl, #bd {
+  color: #9b59b6;
+}
+
+#ID4, #ID15, #ID26, #as {
+  color: #e67e22;
+}
+
+#ID7, #ID14  {
+  color: #c0392b;
+}
+
+#ID8, #ID20, #ID28 {
+  color: #16a085;
+}
+
+#ID22 {
+  color: #34495e;
+}
+
+#ID29 {
+  color: #8e44ad;
+}
+
+.portraits {
+  height: 380px;
+  border: 15px solid #363636;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: "pfdino bold";
+  font-size: 2em;
+  text-transform:uppercase;
+  background-size: cover;
+}
+
+.name-overlay {
+  font-family: "pfdino bold";
+  font-size: 1em;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.glyphicon-chevron-up:before {
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+
+/* MODAL LINKS */
 
 .modalDialog {
 	position: fixed;
@@ -477,6 +386,61 @@ p {
 .close:hover { 
 	background: rgba(90,199,185,1); 
 }
+
+.overlay {
+  font-size: 1.2em;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+  font-family: "brandon-grotesque";
+  font-size: 1em;
+  font-weight: 800;
+}
+
+#linkedin {
+	color: rgba(253,222,77,1);
+}
+
+#git {
+	color: rgba(238,57,62,1);
+}
+
+#twitter {
+	color: rgba(247,247,247,1);
+}
+
+#portfolio {
+  color: rgba(90,199,185,1);
+}
+
+#bio {
+  color: rgba(249,144,211,1);
+}
+
+#angellist {
+	color: rgba(196,177,156,1);
+}
+
+.modalBios {
+	color: rgba(247,247,247,1);
+	font-family: "brandon-grotesque";
+	font-size: 1.6em;
+	letter-spacing: 1.25px;
+	line-height: 1.5;
+}
+
+.stulink {
+  display: block;
+}
+
+.hidelink {
+  display: none;
+}
+
+/*******************/
+/* FOOTER SECTION */
+/*******************/
 
 footer {
 	margin-top: 10px;
@@ -540,6 +504,11 @@ p>a {
 	display: inline-block;
 }
 
+/*******************/
+/* MEDIA QUERIES */
+/*******************/
+
+/* Center contributors in footer & reposition vertical orientation of social links inside the modal*/
 @media screen and (max-width: 815px) {
 	#contributors {
 		margin-left: 0px;
@@ -577,6 +546,7 @@ p>a {
   .name-overlay {
 	font-size: 1.6em;
 	}
+	
 	.three, .row .three {
 	width: 100%;
 	margin-bottom: 35px;
